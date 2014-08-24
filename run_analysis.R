@@ -28,3 +28,5 @@ mergedData2 <- mergedData[,index,drop=FALSE]
 mergedData3 <- aggregate(mergedData2[,1:(length(mergedData2)-2)]
                          ,list(subject=mergedData2$subject,activity=mergedData2$activity_label)
                          , mean)
+
+write.table(mergedData3, "./../average.txt", row.names=FALSE)
